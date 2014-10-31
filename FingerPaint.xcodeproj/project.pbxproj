@@ -13,6 +13,12 @@
 		045C5F5B1A03C90C00ED77B9 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 045C5F5A1A03C90C00ED77B9 /* Images.xcassets */; };
 		045C5F5E1A03C90C00ED77B9 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 045C5F5C1A03C90C00ED77B9 /* LaunchScreen.xib */; };
 		045C5F6A1A03C90C00ED77B9 /* FingerPaintTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045C5F691A03C90C00ED77B9 /* FingerPaintTests.swift */; };
+		045C5F751A03CA5200ED77B9 /* SpecTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045C5F741A03CA5200ED77B9 /* SpecTests.swift */; };
+		045C5F761A03CB4300ED77B9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045C5F551A03C90C00ED77B9 /* ViewController.swift */; };
+		045C5F771A03CB7800ED77B9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045C5F531A03C90C00ED77B9 /* AppDelegate.swift */; };
+		045C5F791A03CC2B00ED77B9 /* CanvasView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045C5F781A03CC2B00ED77B9 /* CanvasView.swift */; };
+		045C5F7A1A03CC2B00ED77B9 /* CanvasView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045C5F781A03CC2B00ED77B9 /* CanvasView.swift */; };
+		045C5F7B1A03CF9A00ED77B9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 045C5F571A03C90C00ED77B9 /* Main.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +42,8 @@
 		045C5F631A03C90C00ED77B9 /* FingerPaintTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FingerPaintTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		045C5F681A03C90C00ED77B9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		045C5F691A03C90C00ED77B9 /* FingerPaintTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FingerPaintTests.swift; sourceTree = "<group>"; };
+		045C5F741A03CA5200ED77B9 /* SpecTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpecTests.swift; sourceTree = "<group>"; };
+		045C5F781A03CC2B00ED77B9 /* CanvasView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CanvasView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +91,7 @@
 				045C5F5A1A03C90C00ED77B9 /* Images.xcassets */,
 				045C5F5C1A03C90C00ED77B9 /* LaunchScreen.xib */,
 				045C5F511A03C90C00ED77B9 /* Supporting Files */,
+				045C5F781A03CC2B00ED77B9 /* CanvasView.swift */,
 			);
 			path = FingerPaint;
 			sourceTree = "<group>";
@@ -98,6 +107,7 @@
 		045C5F661A03C90C00ED77B9 /* FingerPaintTests */ = {
 			isa = PBXGroup;
 			children = (
+				045C5F731A03CA5200ED77B9 /* spec */,
 				045C5F691A03C90C00ED77B9 /* FingerPaintTests.swift */,
 				045C5F671A03C90C00ED77B9 /* Supporting Files */,
 			);
@@ -110,6 +120,14 @@
 				045C5F681A03C90C00ED77B9 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		045C5F731A03CA5200ED77B9 /* spec */ = {
+			isa = PBXGroup;
+			children = (
+				045C5F741A03CA5200ED77B9 /* SpecTests.swift */,
+			);
+			path = spec;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -202,6 +220,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				045C5F7B1A03CF9A00ED77B9 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -214,6 +233,7 @@
 			files = (
 				045C5F561A03C90C00ED77B9 /* ViewController.swift in Sources */,
 				045C5F541A03C90C00ED77B9 /* AppDelegate.swift in Sources */,
+				045C5F791A03CC2B00ED77B9 /* CanvasView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -221,6 +241,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				045C5F771A03CB7800ED77B9 /* AppDelegate.swift in Sources */,
+				045C5F761A03CB4300ED77B9 /* ViewController.swift in Sources */,
+				045C5F7A1A03CC2B00ED77B9 /* CanvasView.swift in Sources */,
+				045C5F751A03CA5200ED77B9 /* SpecTests.swift in Sources */,
 				045C5F6A1A03C90C00ED77B9 /* FingerPaintTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
