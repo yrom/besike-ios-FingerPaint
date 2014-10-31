@@ -11,6 +11,15 @@ import UIKit
 class ViewController: UIViewController {
 
     @IBOutlet weak var canvasView: CanvasView!
+    var tappedBtn: UIButton?{
+        didSet{
+            if tappedBtn != oldValue {
+                tappedBtn?.layer.shadowRadius = 3
+                oldValue?.layer.shadowRadius = 0
+            }
+        }
+    }
+    weak var clearButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,6 +30,7 @@ class ViewController: UIViewController {
         self.view.addSubview(self.canvasView)
         
         setupColorPickers()
+        setupClearButton()
     }
 
     override func didReceiveMemoryWarning() {
@@ -66,15 +76,31 @@ class ViewController: UIViewController {
             button.layer.shadowOpacity = 1
             button.addTarget(self, action: "colorPickerTapped:", forControlEvents: UIControlEvents.TouchUpInside)
             self.view.addSubview(button)
+            
+            if i == 0 {
+                tappedBtn = button
+            }
         }
     }
-    var tappedBtn: UIButton?
+   
     func colorPickerTapped(button: UIButton) {
         println("tapped: \(button.backgroundColor)")
         self.canvasView.currentColor = button.backgroundColor!
-        button.layer.shadowRadius = 3
-        tappedBtn?.layer.shadowRadius = 0
         tappedBtn = button
+    }
+    
+    func setupClearButton() {
+        let button = UIButton.buttonWithType(UIButtonType.System) as UIButton
+        self.clearButton = button
+        button.frame = CGRect(x: 267, y: 518, width: 37, height: 30)
+        button.setTitle("Clear", forState: UIControlState.Normal)
+        
+        button.addTarget(self, action: "clearCanvas:", forControlEvents: UIControlEvents.TouchUpInside)
+        self.view.addSubview(button)
+    }
+    
+    func clearCanvas(button: UIButton) {
+        self.canvasView.clearPaths()
     }
 
 }

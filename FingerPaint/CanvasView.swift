@@ -14,9 +14,6 @@ class CanvasView: UIView {
                             (150,200)]
     var paths = [Path]()
     var currentColor: UIColor! = UIColor.blackColor() {
-        willSet(color){
-            println("will set \(color)")
-        }
         didSet{
             if currentColor != oldValue {
                 println("Set color \(currentColor) from \(oldValue)")
@@ -67,6 +64,13 @@ class CanvasView: UIView {
         CGContextSetStrokeColorWithColor(context, path.color.CGColor)
         CGContextStrokePath(context)
     }
+    
+    func clearPaths(){
+        paths.removeAll(keepCapacity: false)
+        // redrawn
+        setNeedsDisplay()
+    }
+    
     override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
         let t = touches.anyObject() as UITouch
         let point = t.locationInView(self)
