@@ -13,6 +13,18 @@ class CanvasView: UIView {
                   (100,150),(150,150),
                             (150,200)]
 
+    var currentColor: UIColor! = UIColor.blackColor() {
+        willSet(color){
+            println("will set \(color)")
+        }
+        didSet{
+            if currentColor != oldValue {
+                println("Set color \(currentColor) from \(oldValue)")
+                setNeedsDisplay()
+            }
+        }
+        
+    }
     override func drawRect(rect: CGRect) {
        
         // Get the drawing context.

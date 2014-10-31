@@ -60,8 +60,21 @@ class ViewController: UIViewController {
             let color = colors[i]
             let button = UIButton(frame: CGRect(x: x, y: y, width: size.0, height: size.1))
             button.backgroundColor = color
+            button.layer.shadowColor = UIColor(white: 0.4, alpha: 1).CGColor
+            button.layer.shadowOffset = CGSize(width: 0, height: 0)
+            button.layer.shadowRadius = 0
+            button.layer.shadowOpacity = 1
+            button.addTarget(self, action: "colorPickerTapped:", forControlEvents: UIControlEvents.TouchUpInside)
             self.view.addSubview(button)
         }
+    }
+    var tappedBtn: UIButton?
+    func colorPickerTapped(button: UIButton) {
+        println("tapped: \(button.backgroundColor)")
+        self.canvasView.currentColor = button.backgroundColor!
+        button.layer.shadowRadius = 3
+        tappedBtn?.layer.shadowRadius = 0
+        tappedBtn = button
     }
 
 }
